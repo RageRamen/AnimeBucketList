@@ -1,6 +1,7 @@
 import requests
 import random
 
+# Connection to Jikan API
 response = requests.get('https://raw.githubusercontent.com/jikan-me/jikan-rest/master/storage/api-docs/api-docs.json')
 print(response.status_code)
 

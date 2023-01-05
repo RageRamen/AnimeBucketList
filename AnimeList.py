@@ -3,10 +3,22 @@ from collections import namedtuple
 import json
 import random
 
+def print_anime(title):
+
+    # Connection to Jikan API
+    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 5, 'letter': title})
+    print("Status code: ", response.status_code)
+
+    # Load json string
+    data = response.json()
+    for x in data['data']:
+        print(x['url'], x['title'])
+
+
 def print_anime_popularity():
 
     # Connection to Jikan API
-    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 10, 'letter': 'Bleach'})
+    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 5, 'letter': 'Bleach'})
     print("Status code: ", response.status_code)
 
     # Load json string
@@ -41,4 +53,4 @@ def print_random_anime():
 # print(random.choice(animeList))
 
 #print_random_anime()
-print_anime_popularity()
+#print_anime_popularity()

@@ -6,12 +6,14 @@ import random
 def print_anime_popularity():
 
     # Connection to Jikan API
-    response = requests.get('https://api.jikan.moe/v4/anime', params={'letter': 'Bleach'})
+    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 10, 'letter': 'Bleach'})
     print("Status code: ", response.status_code)
 
     # Load json string
     data = response.json()
-    print(data['data'][0]) #this is a list in a list
+    for x in data['data']:
+        print(x['url'], x['title'])
+    #print(data['data']) #this is a list in a list
 
     # Create json string
     new_json = json.dumps(data, indent=4, sort_keys=True)
@@ -29,7 +31,7 @@ def print_random_anime():
 
     # Create json string
     new_json = json.dumps(data, indent=4, sort_keys=True)
-    print(new_json)
+    #print(new_json)
 
 
 # List of Anime to watch/re-watch

@@ -6,23 +6,25 @@ import random
 
 def get_animedata(title):
     # Connection to Jikan API
-    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 1, 'letter': title})
+    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 1, 'letter': title, 'order_by': 'title'})
     print("Status code: ", response.status_code)
 
     # Load json string
     data = response.json()
 
-    # Information saved
-    #for x in data['data']:
-    #    title = x['title']
-    #    score = x['score']
-    #    season = x['season']
-    #    year = x['year']
-    #    image_url = x['images']['webp']['image_url']
-    #    print(x['url'], x['title'], x['score'], x['season'], x['year'], x['images']['webp']['image_url'])
-
     return data
 
+
+def get_random_animedata():
+    # Connection to Jikan API
+    response = requests.get('https://api.jikan.moe/v4/random/anime')
+    print("Status code: ", response.status_code)
+
+    # Load json string
+    data = response.json()
+    print(data['data'])
+
+    return data
 def print_anime(title):
     # Connection to Jikan API
     response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 5, 'letter': title})

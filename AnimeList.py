@@ -6,7 +6,7 @@ import random
 
 def get_animedata(title):
     # Connection to Jikan API
-    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 1, 'letter': title, 'order_by': 'title'})
+    response = requests.get('https://api.jikan.moe/v4/anime', params={'limit': 1, 'letter': title, 'order_by': 'title', 'type': 'tv'})
     print("Status code: ", response.status_code)
 
     # Load json string

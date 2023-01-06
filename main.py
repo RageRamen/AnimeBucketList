@@ -22,7 +22,7 @@ class App(customtkinter.CTk):
         self.search_frame = customtkinter.CTkFrame(self, corner_radius=10, width=600, height=200, border_width=2, border_color="gray")
         self.search_frame.grid(row=0, column=1, pady=10, padx=10)
 
-        self.menu_title = customtkinter.CTkLabel(self.search_frame, text="Anime Search But Cleaner",
+        self.menu_title = customtkinter.CTkLabel(self.search_frame, text="Anime Search But Clean",
                                                  font=customtkinter.CTkFont(size=20, weight="bold"),
                                                  anchor="center")
         self.menu_title.grid(row=0, column=0, pady=10, padx=10, columnspan=2)
@@ -52,16 +52,16 @@ class App(customtkinter.CTk):
         self.info_mid_frame.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
 
         self.title = customtkinter.CTkLabel(self.info_mid_frame, text="Title", font=("Arial", 20))
-        self.title.grid(row=0, column=0, padx=10, pady=10, sticky="n")
+        self.title.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
 
         self.score = customtkinter.CTkLabel(self.info_mid_frame, text="Score", font=("Arial", 20))
-        self.score.grid(row=0, column=1, pady=10, padx=10, sticky="n")
+        self.score.grid(row=0, column=1, pady=10, padx=10, sticky="nsew")
 
         self.season = customtkinter.CTkLabel(self.info_mid_frame, text="Season", font=("Arial", 20))
-        self.season.grid(row=1, column=0, pady=10, padx=10, sticky="n")
+        self.season.grid(row=1, column=0, pady=10, padx=10, sticky="nsew")
 
         self.year = customtkinter.CTkLabel(self.info_mid_frame, text="Year", font=("Arial", 20))
-        self.year.grid(row=1, column=1, pady=10, padx=10, sticky="n")
+        self.year.grid(row=1, column=1, pady=10, padx=10, sticky="nsew")
 
         # image = customtkinter.CTkImage(master=info_frame, image="anime.png")
 
